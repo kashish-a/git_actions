@@ -19,3 +19,18 @@ jobs:
               repo: context.repo.repo,
               labels: ["good first issue","bug"]
             })
+       
+
+
+
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Thank you for reporting this issue! We will come up with a solution as soon as possible. ![meme](https://i.imgflip.com/ws9ew.jpg)"
+        
