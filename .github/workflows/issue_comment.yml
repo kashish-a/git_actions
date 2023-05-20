@@ -5,6 +5,7 @@ on:
   issues:
     types:
       - labeled
+      - unlabeled 
 jobs:
   add-comment:
     if: github.event.label.name == 'bug'
