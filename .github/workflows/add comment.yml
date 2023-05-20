@@ -1,4 +1,4 @@
-name: Write message
+name: Write message for 1st contribution
 
 on: [pull_request_target, issues]
 
