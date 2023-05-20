@@ -1,21 +1,11 @@
-
-
-name: Add issue comment
-on:
-  issues:
-    types:
-      - labeled
-      - unlabeled 
-jobs:
-  add-comment:
-    if: github.event.label.name == 'bug'
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-    steps:
-      - name: Add comment
+       name: Create comment
         uses: peter-evans/create-or-update-comment@v3
         with:
-          issue-number: ${{ github.event.issue.number }}
+          issue-number: 1
           body: |
-            Oh no! Another issue. **Make sure to reference this issue in your pull request.** :sparkles: Thank you for your contribution! :sparkles: 
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [create-or-update-comment][1]
+
+            [1]: https://github.com/peter-evans/create-or-update-comment
+          reactions: '+1'
